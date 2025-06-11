@@ -20,7 +20,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://34.60.129.25", "https://api-rkakl-mahasiswa-772045342482.us-central1.run.app"],
+    origin: ["http://localhost:3000", "http://34.66.118.190", "https://api-rkakl-mahasiswa-772045342482.us-central1.run.app"],
     credentials: true,
   })
 );
