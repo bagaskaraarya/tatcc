@@ -1,5 +1,5 @@
 export const Base_Url =
-  "http://localhost:5000";
+  "https://api-rkakl-mahasiswa-772045342482.us-central1.run.app";
 
 // Function to test API connection
 export const testConnection = async () => {
