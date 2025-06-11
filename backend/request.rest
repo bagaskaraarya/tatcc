@@ -1,0 +1,94 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmltIjoiMTIzMjIwMjA5IiwibmFtYSI6ImR3ZyIsInJvbGUiOiJtYWhhc2lzd2EiLCJpYXQiOjE3NDk2MjA4OTgsImV4cCI6MTc0OTYyNDQ5OH0.6fUaiOiQxCdUdHnw8CGtjoEwYRnja9bG1APUL0Q7zUs
+
+### LOGIN
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "nim": "123220209",
+  "password": "12345"
+}
+
+### GET ALL USERS (admin only)
+GET http://localhost:5000/users
+Authorization: Bearer {{token}}
+
+### GET USER BY ID (admin only)
+GET http://localhost:5000/users/2
+Authorization: Bearer {{token}}
+
+### CREATE USER (admin only)
+POST http://localhost:5000/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nama": "dwg",
+  "nim": "123220209",
+  "email": "dwg@mail.com",
+  "password": "12345",
+  "role": "mahasiswa"
+}
+
+### UPDATE USER (admin only)
+PUT http://localhost:5000/users/2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nama": "Andi Updated",
+  "email": "andiupdate@mail.com"
+}
+
+### DELETE USER (admin only)
+DELETE http://localhost:5000/users/2
+Authorization: Bearer {{token}}
+
+### GET ALL RKAKL (admin or mahasiswa)
+GET http://localhost:5000/rkakl
+Authorization: Bearer {{token}}
+
+### GET RKAKL BY ID
+GET http://localhost:5000/rkakl/1
+Authorization: Bearer {{token}}
+
+### CREATE RKAKL (mahasiswa only)
+POST http://localhost:5000/rkakl
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "rencana_kerja": "Informatics E-Sport Cup",
+  "deskripsi": "Event Lomba Esport",
+  "kategori": "program kerja",
+  "status": "pending",
+  "link_anggaran": "https://drive.google.com/some-link"
+}
+
+### UPDATE RKAKL (admin only)
+PUT http://localhost:5000/rkakl/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "judul": "Rencana IEC diperbarui",
+  "isi": "Nambah Guest Star",
+  "status": "proses"
+}
+
+### DELETE RKAKL (admin only)
+DELETE http://localhost:5000/rkakl/1
+Authorization: Bearer {{token}}
+
+### REGISTER USER
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "nama": "Arya",
+  "nim": "123220188",
+  "email": "arya@gmail.com",
+  "password": "123",
+  "role": "mahasiswa"
+}
+
